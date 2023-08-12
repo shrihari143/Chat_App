@@ -1,0 +1,25 @@
+{
+  "name": "shrihari",
+  "version": "1.0.0",
+  "description": "chatApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "client": "npm start --prefix ../public",
+    "dev": "concurrently \"npm run start\" \"npm run client\""
+
+  },
+  "author": "shrihari_chaurasia",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "colors": "^1.4.0",
+    "concurrently": "^8.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.0",
+    "socket.io": "^4.7.1"
+  }
+}
