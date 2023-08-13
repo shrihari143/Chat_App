@@ -6,17 +6,23 @@ const app= express();
 const socket= require("socket.io");
 const userRoutes= require("./Routes/userRoutes");
 const msgRoutes=require("./Routes/msgRoutes");
-//const { sendMessageRoute } = require("./public/src/utills/ApiRoutes");
+
 
 require("dotenv").config();
 const path = require('path');
 connectDB();
 app.use(cors());
 app.use(express.json());
+
+
+app.use(express.static(path.join(__dirname,'/public/build')));
+app.get("*",function(req,res){
+  res.sendFile(path.join(__dirname,"./public/build/index.html"));
+});
+
+
 app.use("/api/auth",userRoutes );
 app.use("/api/msg",msgRoutes );
-
-
 
 
 const server =app.listen(process.env.PORT,()=>{
