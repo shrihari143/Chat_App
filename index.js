@@ -16,10 +16,11 @@ app.use(express.json());
 app.use("/api/auth",userRoutes );
 app.use("/api/msg",msgRoutes );
 
-app.use(express.static(path.join(__dirname,'/public/build')));
-app.get("*",function(req,res){
-  res.sendFile(path.join(__dirname,"./public/build/index.html"));
-});
+app.use(express.static('public/build'));
+// app.use(express.static(path.join(__dirname,'/public/build')));
+// app.get("*",function(req,res){
+//   res.sendFile(path.join(__dirname,"./public/build/index.html"));
+// });
 
 
 
