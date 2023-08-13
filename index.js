@@ -6,7 +6,7 @@ const app= express();
 const socket= require("socket.io");
 const userRoutes= require("./Routes/userRoutes");
 const msgRoutes=require("./Routes/msgRoutes");
-const { sendMessageRoute } = require("./public/src/utills/ApiRoutes");
+
 
 require("dotenv").config();
 const path = require('path');
