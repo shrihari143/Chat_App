@@ -19,7 +19,6 @@ app.get("*",function(req,res){
   res.sendFile(path.join(__dirname,"./public/build/index.html"));
 });
 
-app.use(express.static('public/build'));
 app.use("/api/auth",userRoutes );
 app.use("/api/msg",msgRoutes );
 
