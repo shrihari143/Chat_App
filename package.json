@@ -8,7 +8,7 @@
     "server": "nodemon index.js",
     "start": "node index.js",
     "client": "npm start --prefix ./public",
-    "dev": "concurrently \"npm run start\" \"npm run client\""
+    "dev": "concurrently \"npm start\" \"npm run client\""
 
   },
   "author": "shrihari_chaurasia",
