@@ -1,12 +1,12 @@
 const express= require("express");
 const cors= require("cors");
 const mongoose= require("mongoose");
-const connectDB= require("../server/db")
+const connectDB= require("./db")
 const app= express();
 const socket= require("socket.io");
-const userRoutes= require("../server/Routes/userRoutes");
-const msgRoutes=require("../server/Routes/msgRoutes");
-const { sendMessageRoute } = require("../public/src/utills/ApiRoutes");
+const userRoutes= require("./Routes/userRoutes");
+const msgRoutes=require("./Routes/msgRoutes");
+const { sendMessageRoute } = require("./public/src/utills/ApiRoutes");
 
 require("dotenv").config();
 const path = require('path');
@@ -16,9 +16,9 @@ app.use(express.json());
 app.use("/api/auth",userRoutes );
 app.use("/api/msg",msgRoutes );
 
-app.use(express.static(path.join(__dirname,'../public/build')));
+app.use(express.static(path.join(__dirname,'./public/build')));
 app.get("*",function(req,res){
-  res.sendFile(path.join(__dirname,"../public/build/index.html"));
+  res.sendFile(path.join(__dirname,"./public/build/index.html"));
 });
 
 
